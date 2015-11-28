@@ -1,0 +1,1 @@
+Projeto com a maioria dos exercício propostos Cadeira de Fundamentos de Programação (FUP) na UFC - (Universidade Federal do Ceará). Linguagem utilizada: C.
