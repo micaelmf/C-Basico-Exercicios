@@ -1,1 +1,1 @@
-Projeto com a maioria dos exercÌcio propostos Cadeira de Fundamentos de ProgramaÁ„o (FUP) na UFC - (Universidade Federal do Cear·). Linguagem utilizada: C.
+Projetos com a maioria dos exerc√≠cios propostos na Cadeira de Fundamentos de Programa√ß√£o (FUP) na UFC - (Universidade Federal do Cear√°). Linguagem utilizada: C.
