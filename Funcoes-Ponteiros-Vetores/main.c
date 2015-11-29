@@ -5,7 +5,6 @@
 /**** Lista de Exercícios - Funções e Ponteiros em C */
 
 /**TODO: Escreva os cabeçalhos (protótipos) das funcoeses aqui **/
-/**...**/
 void incrementa(int *n, int num);
 void swap(int *a, int *b);
 void calc(int x, int y, int *soma);
