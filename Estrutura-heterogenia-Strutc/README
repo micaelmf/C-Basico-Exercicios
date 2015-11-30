@@ -1,0 +1,40 @@
+/*Q1: Soma */
+/* Utilizando a struct abaixo, crie uma função que recebe uma struct "numeros"
+  e retorna a soma de a e b. */
+
+/*Q2: Maior Número */
+/*Escreva uma funçãoo que recebe uma variável do tipo "numeros" e retorna o maior entre a e b.*/
+
+/* Q3:  Maior Elemento */
+/* Crie uma funçãoo que recebe como argumento uma struct "vetor", e retorna o maior elemento
+  desse vetor.*/
+
+/*Q4: Calculadora */
+/* Vamos alterar agora a struct "numeros", ambas as variáveis a e b agora são do
+   tipo float e será acrescentado mais uma variável do tipo char chamada "operador",
+   ela deve conter o tipo de operação que será realizada entre a e b.
+   Utilizando a nova struct, crie uma função que retorna o resultado da operação
+   realizada entre a e b, onde a operação a ser realizada Ã© soma ("˜+"™), subtração ("˜-"™),
+   divisão ("˜/"™) ou multiplicação ("˜*"™), dependendo do tipo de operação armazenada
+   na variável "operador" */
+
+/* Q5: Média das Notas */
+/* Utilizando a struct "aluno" definida abaixo, crie uma função que calcula e retorna
+  a média das trés notas contidas no vetor "notas". */
+
+/* Q6: Maior Média */
+/* Com a struct e a função criada na questão anterior, crie uma nova função, que recebe um
+  vetor de n alunos como argumento, e retorna o número de matricula do aluno com maior média. */
+
+/* Construir Personagem */
+
+/* A struct "personagem" contém os atributos de um personagem em um jogo de RPG, utilizando
+  essa struct e a função criarPersonagem construa um novo personagem. */
+
+/* Q8: Duelo */
+/* Agora vamos criar a função "duelo", ela recebe dois personagens e faz os dois duelar.
+A função deve retornar 1 se o personagem a ganhar e 0 caso contrário.
+Dicas: Utilize um laço while e enquanto os dois personagens estiverem vivos, ou sejá
+a vida dos dois for maior que 0, os dois devem continuar se atacando.
+Quando o personagem a ataca o b, a quantidade de vida que o personagem b perde
+é igual ao ataque de a, a mesma coisa acontece quando b ataca a. */
