@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+/*
+Defina a struct Aluno que possui os seguintes campos:
+número de matrícula e um vetor de notas.
+Defina a função avaliarMedia que recebe uma struct “Aluno”, calcula a média das duas notas contidas o vetor “notas” e retorna:
+1 caso o aluno tenha sido aprovado (média >= 7),
+0 caso tenha que fazer AF (7 > média >= 4) e;
+-1 caso esteja reprovado (média < 4)
+*/
+
 typedef struct{
 	int matricula;
 	float notas[2];
@@ -10,7 +19,7 @@ typedef struct{
 int avaliarMedia (Aluno a);
 void swapVet (int v[], int v2[], int tam);
 int ehOrdenado (int v[], int tam);
-bool adicionaValor(int v[], int elem, int tam);
+
 
 int avaliarMedia (Aluno a){
 	float media = 0;
@@ -33,6 +42,11 @@ int avaliarMedia (Aluno a){
 	}
 	
 }
+/*
+Escreva uma função em C que recebe dois vetores e troca seus
+elementos. O protótipo da função é definido a seguir:
+void swapVet(int v1[], int v2[], int tam);
+*/
 
 void swapVet (int v[], int v2[], int tam){
 	int i, aux;
@@ -59,37 +73,40 @@ int ehOrdenado (int v[], int tam){
 	return 1;
 }
 
-/*>>> 	Implemente uma função que adiciona um valor ao vetor e aumenta seu tamanho. Considere que o vetor suporta apenas 20 valores
-		Se o usuário tentar inserir mais de 20 vetores, você não deve adicionar o elemento e deve sinalizar o erro retornado false */
-bool adicionaValor(int v[], int elem, int tam){
-	
-	if (tam < 20){
-		tam++;
-
-		v[tam-1] = elem;
+/*
+Implemente uma função que adiciona novos valores no vetor e
+aumenta seu tamanho. Considere que o vetor suporta apenas 20
+valores. Se o usuário tentar inserir mais de 20 valores, você não
+deve adicionar o elemento e deve sinalizar o erro retornando false.
+*/
+bool adicionaValor(int v[], int elem, int *tam){
+	if (*tam < 20){
+		*tam = *tam + 1;
+		v[*tam - 1] = elem;
 		return true;
 	}
-	printf("TamanhoF %d\n",tam);		
-	
 	return false;
 }
+/*
+Faça uma função que recebe uma substring menor, uma string maior e uma posição e verifica se a substring pode ser encontrada
+na posição passada na substring maior. Ex: menor = “bin” maior = “o bin laden e o bingo” se pos = 2 ou 16 voce deve retornar
+true, e false, caso contrário. O protótipo dessa função é dado a seguir:
+int subPos(char menor[], char maior[], int pos);
+*/		
 		
 int main(int argc, char *argv[]) {
-	int v[] = {1};
+	int v[1] = {1};
 	int tam = 1;
 	int elem = 0;
-	int result = 0;
+	bool result = true;
 	
-	while (tam < 20){
-		printf("Digite o valor para adicionar: ");
+	while(result == true){
+		printf("Digite o valor para adicionar:\n");
 		scanf("%d",&elem);
 		
 		result = adicionaValor(v,elem,&tam);
 		printf("Adicionou? %d\n", result);	
-		printf("Tamanho =  %d\n", tam);	
+		printf("Tamanho =  %d\n", tam);
 	}
-	
-	
-	
 	return 0;
 }

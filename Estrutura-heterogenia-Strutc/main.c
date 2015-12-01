@@ -1,131 +1,139 @@
+/* Lista - Struct */
 #include <stdio.h>
 
 /*Q1: Soma */
-/* Utilizando a struct abaixo, crie uma funÁ„o que recebe uma struct "numeros"ù
+/* Utilizando a struct abaixo, crie uma fun√ß√£o que recebe uma struct ‚Äúnumeros‚Äù
   e retorna a soma de a e b. */
 
-typedef struct{
+typedef struct
+{
     int a;
     int b;
 }Numeros;
 
 int soma(Numeros n){
-    return n.a + n.b;
+	int soma = 0;
+	
+	soma = n.a + n.b;
+	
+    return soma;
+    //return n.a + n.b;
 }
 
-/*Q2: Maior N˙mero */
-/*Escreva uma funÁ„oo que recebe uma vari·vel do tipo "numeros"ù e retorna o maior entre a e b.*/
+/*Q2: Maior N√∫mero */
+/*Escreva uma fun√ß√£o que recebe uma vari√°vel do tipo ‚Äúnumeros‚Äù e retorna o maior entre a e b.*/
+
 int maiorNumero(Numeros n){
-	int maior = 0;
 	
-	if (n.a > n.b){
-		maior = n.a;
+    if (n.a > n.b){
+    	return n.a;
 	}else{
-		maior = n.b;
+		return n.b;
 	}
 	
-    return maior;
+    return 0;
 }
 
 /* Q3:  Maior Elemento */
-/* Crie uma funÁ„oo que recebe como argumento uma struct "vetor"ù, e retorna o maior elemento
+/* Crie uma fun√ß√£o que recebe como argumento uma struct ‚Äúvetor‚Äù, e retorna o maior elemento
   desse vetor.*/
-typedef struct{
+typedef struct
+{
     int v[10];
     int tamanho;
 }Vetor;
 
 int maiorElemento(Vetor a){
-	int i, maior = 0;
-	
-	for(i = 0; i < a.tamanho; i++){
-		if(a.v[i] > maior){
-			maior = a.v[i];
+    int i, maior = 0;
+    
+    for(i = 0; i < a.tamanho; i++){
+    	if(a.v[i] > maior){
+    		maior = a.v[i];
 		}
 	}
 	
-    return maior;
+	return maior;
 }
 
 /*Q4: Calculadora */
-/* Vamos alterar agora a struct "numeros"ù, ambas as vari·veis a e b agora s„o do
-   tipo float e ser· acrescentado mais uma vari·vel do tipo char chamada "operador"ù,
-   ela deve conter o tipo de operaÁ„o que ser· realizada entre a e b.
-   Utilizando a nova struct, crie uma funÁ„o que retorna o resultado da operaÁ„o
-   realizada entre a e b, onde a operaÁ„o a ser realizada √© soma ("ò+"ô), subtraÁ„o ("ò-"ô),
-   divis„o ("ò/"ô) ou multiplicaÁ„o ("ò*"ô), dependendo do tipo de operaÁ„o armazenada
-   na vari·vel "operador"ù */
+/* Vamos alterar agora a struct ‚Äúnumeros‚Äù, ambas as vari√°veis a e b agora s√£o do
+   tipo float e ser√° acrescentado mais uma vari√°vel do tipo char chamada ‚Äúoperador‚Äù,
+   ela deve conter o tipo de opera√ß√£o que ser√° realizada entre a e b.
+   Utilizando a nova struct, crie uma fun√ß√£o que retorna o resultado da opera√ß√£o
+   realizada entre a e b, onde a opera√ß√£o a ser realizada √© soma (‚Äò+‚Äô), subtra√ß√£o (‚Äò-‚Äô),
+   divis√£o (‚Äò/‚Äô) ou multiplica√ß√£o (‚Äò*‚Äô), dependendo do tipo de opera√ß√£o armazenada
+   na vari√°vel ‚Äúoperador‚Äù */
 
-typedef struct{
+typedef struct
+{
     float a;
     float b;
     char operador;
 }Numeros2;
 
 float calcular(Numeros2 n){
-	float result;
+	float result = 0;
 	
-	
-	if(n.operador == '+'){
+	if(n.operador = '+'){
 		result = n.a + n.b;
 	}else if(n.operador == '-'){
 		result = n.a - n.b;
 	}else if(n.operador == '*'){
-		result = n.a * n.b;
+		result = n.a * n.b;			
 	}else if(n.operador == '/'){
-		result = n.a / n.b;
+		result = n.a * n.b;
 	}else{
-		printf("Operador n„o identificado\n");
+		printf("Operador invalido");
 	}
 	
     return result;
 }
 
-/* Q5: MÈdia das Notas */
-/* Utilizando a struct "aluno"ù definida abaixo, crie uma funÁ„o que calcula e retorna
-  a mÈdia das trÈs notas contidas no vetor "notas"ù. */
+/* Q5: M√©dia das Notas */
+/* Utilizando a struct ‚Äúaluno‚Äù definida abaixo, crie uma fun√ß√£o que calcula e retorna
+  a m√©dia das tr√™s notas contidas no vetor ‚Äúnotas‚Äù. */
 
-typedef struct{
+typedef struct
+{
     int matricula;
     float notas[3];
 }Aluno;
 
 float media(Aluno a){
-	float media = 0;
-	int i;
+	int i, media = 0, soma = 0;
 	
 	for(i = 0; i < 3; i++){
-		media += a.notas[i];
+		soma += a.notas[i];
 	}
-	
-	media = media/3;
+
+	media = soma/i;
 	
     return media;
+
 }
 
-/* Q6: Maior MÈdia */
-/* Com a struct e a funÁ„o criada na quest„o anterior, crie uma nova funÁ„o, que recebe um
-  vetor de n alunos como argumento, e retorna o n˙mero de matricula do aluno com maior mÈdia. */
+/* Q6: Maior M√©dia */
+/* Com a struct e a fun√ß√£o criada na quest√£o anterior, crie uma nova fun√ß√£o, que recebe um
+  vetor de n alunos como argumento, e retorna o n√∫mero de matr√≠cula do aluno com maior m√©dia. */
 
 int maiorMedia(Aluno a[], int n){
-	int i;
-	float melhor = 0, matricula = 0;
-	
+int i = 0, melhor = 0;
+		
 	for(i = 0; i < 3; i++){
-		if(melhor < media(a[i])){
+		if (melhor < media(a[i])){
 			melhor = media(a[i]);
-			matricula = a[i].matricula;
 		}
 	}
 	
-    return matricula;
+    return melhor;
+
 }
 
 
 /* Construir Personagem */
 
-/* A struct "personagem" contÈm os atributos de um personagem em um jogo de RPG, utilizando
-  essa struct e a funÁ„o criarPersonagem construa um novo personagem. */
+/* A struct "personagem" cont√©m os atributos de um personagem em um jogo de RPG, utilizando
+  essa struct e a fun√ß√£o criarPersonagem constr√≥i um novo personagem. */
 
 typedef struct
 {
@@ -134,25 +142,22 @@ typedef struct
 }Personagem;
 
 Personagem criarPersonagem(int vida, int ataque){
-    Personagem p;
-    
-	p.vida = vida;
+	Personagem p;
     p.ataque = ataque;
-    
+    p.vida = vida;
     return p;
 }
 
 /* Q8: Duelo */
-/* Agora vamos criar a funÁ„o "duelo", ela recebe dois personagens e faz os dois duelar.
-A funÁ„o deve retornar 1 se o personagem a ganhar e 0 caso contr·rio.
-Dicas: Utilize um laÁo while e enquanto os dois personagens estiverem vivos, ou sej·
+/* Agora vamos criar a fun√ß√£o "duelo", ela recebe dois personagens e faz os dois duelar.
+A fun√ß√£o deve retornar 1 se o personagem a ganhar e 0 caso contr√°rio.
+Dicas: Utilize um la√ßo while e enquanto os dois personagens estiverem vivos, ou sej√°
 a vida dos dois for maior que 0, os dois devem continuar se atacando.
 Quando o personagem a ataca o b, a quantidade de vida que o personagem b perde
-È igual ao ataque de a, a mesma coisa acontece quando b ataca a. */
+√© igual ao ataque de a, a mesma coisa acontece quando b ataca a. */
 
 int duelo(Personagem a, Personagem b){
-	
-	while(a.vida > 0 && b.vida > 0){
+    	while(a.vida > 0 && b.vida > 0){
 		a.vida -= b.ataque;
 		b.vida -= a.ataque;
 		
@@ -163,12 +168,12 @@ int duelo(Personagem a, Personagem b){
 	}else{
 		return 0;
 	}
-    
 }
 
-/**ImplementaÁ„o das funÁıes de teste **/
+/**Implementa√ß√£o das fun√ß√µes de teste **/
 
-void test_soma(){
+void test_soma()
+{
     printf("---------------------\n");
     printf("teste Soma\n");
     Numeros n = {5, 5};
@@ -179,7 +184,8 @@ void test_soma(){
     }
 }
 
-void test_maior_numero(){
+void test_maior_numero()
+{
     printf("---------------------\n");
     printf("teste Maior Numero.\n");
     Numeros n = {1, 2};
@@ -190,7 +196,8 @@ void test_maior_numero(){
     }
 }
 
-void test_maior_elemento(){
+void test_maior_elemento()
+{
     printf("---------------------\n");
     printf("teste Maior Elemento.\n");
     Vetor a = {{12, 5, 6, 7, 8}, 5};
@@ -206,7 +213,7 @@ void test_calculadora()
     printf("---------------------\n");
     printf("teste Calculadora.\n");
     Numeros2 n = {5, 5, '+'};
-    if(calcular(n) == 10 || calcular(n) == 0 || calcular(n) == 25 || calcular(n) == 1){
+    if(calcular(n) == 10 && calcular(n) == 0 && calcular(n) == 25 && calcular(n) == 1){
         printf("    ok.\n");
     }else{
         printf("    not ok.\n");
@@ -277,6 +284,7 @@ int main()
     test_maior_media();
     test_criar_personagem();
     test_duelo();
- 
     return 0;
 }
+
+
