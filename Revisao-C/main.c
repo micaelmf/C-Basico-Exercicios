@@ -19,7 +19,8 @@ typedef struct{
 int avaliarMedia (Aluno a);
 void swapVet (int v[], int v2[], int tam);
 int ehOrdenado (int v[], int tam);
-
+bool adicionaValor(int v[], int elem, int *tam);
+bool subPos(char menor[], char maior[], int pos);
 
 int avaliarMedia (Aluno a){
 	float media = 0;
@@ -93,20 +94,44 @@ na posição passada na substring maior. Ex: menor = “bin” maior = “o bin laden e 
 true, e false, caso contrário. O protótipo dessa função é dado a seguir:
 int subPos(char menor[], char maior[], int pos);
 */		
+
+bool subPos(char menor[], char maior[], int pos){
+	int i = 0, verdade = 1, tam = strlen(menor);
+	
+	for(i = 0; i < tam; i++, pos++){
+		if(maior[pos] == menor[i]){
+			verdade = 1;
+			i++;
+			pos++;
+		}else{
+			verdade = 0;
+		}	
+	}
+	
+	
+	if(verdade == 1){
+		return true;
+	}else{
+		return false;	
+	}
+}
+
+void testeSubPos(){
+	char v1[] = "bin";
+	char v2[] = "o bin laden e o bingo";
+	int pos = 2; 
+	
+	printf("Teste da funcao SubPos\n");
+	if(subPos(v1,v2,pos) == true){
+		printf("	ok!");
+	}else{
+		printf("	NOT ok");
+	}
+}
 		
 int main(int argc, char *argv[]) {
-	int v[1] = {1};
-	int tam = 1;
-	int elem = 0;
-	bool result = true;
 	
-	while(result == true){
-		printf("Digite o valor para adicionar:\n");
-		scanf("%d",&elem);
-		
-		result = adicionaValor(v,elem,&tam);
-		printf("Adicionou? %d\n", result);	
-		printf("Tamanho =  %d\n", tam);
-	}
+	testeSubPos();
+	
 	return 0;
 }
